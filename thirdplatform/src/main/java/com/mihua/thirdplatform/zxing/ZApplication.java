@@ -1,0 +1,26 @@
+package com.mihua.thirdplatform.zxing;
+
+import android.app.Application;
+import android.util.DisplayMetrics;
+
+public class ZApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        /**
+         * 初始化尺寸工具类
+         */
+        initDisplayOpinion();
+    }
+
+    private void initDisplayOpinion() {
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        DisplayUtil.density = dm.density;
+        DisplayUtil.densityDPI = dm.densityDpi;
+        DisplayUtil.screenWidthPx = dm.widthPixels;
+        DisplayUtil.screenhightPx = dm.heightPixels;
+        DisplayUtil.screenWidthDip = DisplayUtil.px2dip(getApplicationContext(), dm.widthPixels);
+        DisplayUtil.screenHightDip = DisplayUtil.px2dip(getApplicationContext(), dm.heightPixels);
+    }
+}
