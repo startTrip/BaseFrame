@@ -28,7 +28,7 @@ public abstract class BaseActivity <T extends BasePresenter> extends AppCompatAc
             mPresenter.attach(this);
         }
         // 初始化事件和数据
-        initEventAndData();
+        initEventAndData(savedInstanceState);
         // 设置监听器
         setListener();
     }
@@ -40,7 +40,7 @@ public abstract class BaseActivity <T extends BasePresenter> extends AppCompatAc
     protected abstract T getPresenter();
 
     // 初始化数据
-    protected abstract void initEventAndData();
+    protected abstract void initEventAndData(Bundle bundle);
 
     // 初始化监听器
     protected abstract void setListener();

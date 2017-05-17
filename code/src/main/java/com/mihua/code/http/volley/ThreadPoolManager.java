@@ -29,17 +29,19 @@ public class ThreadPoolManager {
         mThreadPoolExecutor.execute(mRunnable);
     }
 
-    // 线程执行 一直去获取httpTask;
+    // 线程执行 一直去获取 httpTask;
     private Runnable mRunnable = new Runnable() {
+
         @Override
         public void run() {
             while (true){
                 try {
+
                     FutureTask future = mLinkedBlockingQueue.take();
                     if (future != null) {
                         mThreadPoolExecutor.execute(future);
                     }
-                } catch (InterruptedException e) {
+                } catch (InterruptedException e){
                     e.printStackTrace();
                 }
             }

@@ -1,7 +1,7 @@
 package com.mihua.code.http;
 
-import com.mihua.code.http.okhttp.IOkHttpRequestApi;
-import com.mihua.code.http.okhttp.OkHttpRequest;
+import com.mihua.code.http.okhttp.HttpRequest;
+import com.mihua.code.http.okhttp.IRequestApi;
 import com.mihua.code.http.retrofit.RetrofitManger;
 import com.mihua.code.http.volley.Volley;
 
@@ -13,9 +13,9 @@ import com.mihua.code.http.volley.Volley;
 public class HttpRequestFactory{
 
     // OkHttp请求
-    public static IOkHttpRequestApi getOkHttpRequest(){
+    public static IRequestApi getOkHttpRequest(){
 
-        return OkHttpRequest.getInstance();
+        return HttpRequest.getInstance();
 
     }
 
@@ -23,6 +23,7 @@ public class HttpRequestFactory{
     public static RetrofitManger getRetrofitRequest(){
 
         RetrofitManger retrofitManger = RetrofitManger.getInstance();
+
         return retrofitManger;
     }
 

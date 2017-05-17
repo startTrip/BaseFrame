@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mihua.frameproject.vlayout.VLayoutActivity"
+    >
+
+    <!-- 容器用于存储 Fragment -->
+    <FrameLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+    </FrameLayout>
+
+    <!-- 分割线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        />
+
+    <!-- 底部的四个按钮 -->
+    <RadioGroup
+        android:id="@+id/main_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/main_tab_home"
+            android:text="首页"
+            android:drawableTop="@drawable/selector_tab_home"
+            style="@style/MainTabItem"
+            />
+
+        <RadioButton
+            android:id="@+id/main_tab_classify"
+            android:text="分类"
+            android:drawableTop="@drawable/selector_tab_home"
+            style="@style/MainTabItem"
+            />
+
+        <RadioButton
+            android:id="@+id/main_tab_gocart"
+            android:text="购物车"
+            android:drawableTop="@drawable/selector_tab_home"
+            style="@style/MainTabItem"
+            />
+
+        <RadioButton
+            android:id="@+id/main_tab_personal"
+            android:text="我的"
+            android:drawableTop="@drawable/selector_tab_home"
+            style="@style/MainTabItem"
+            />
+
+    </RadioGroup>
+
+
+
+
+</LinearLayout>

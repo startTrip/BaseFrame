@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/mihua/frameproject/pay/utils/AlipayHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/color/selector_main_tab_font.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/selector_tab_home.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/shape_home_search.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/home_action_bar.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/saoyisao_navigationbar_normal.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shouye_tabbar_highlight.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/shouye_tabbar_normal.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/sousuo_navigationbar_normal.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/xiaoxi_navigationbar_normal.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/code/src/main/res/anim/fade_in_center.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/code/src/main/res/anim/fade_out_center.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

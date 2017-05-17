@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".request.RequestActivity"
+    >
+
+    <Button
+        android:textSize="20sp"
+        android:id="@+id/btn_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:text="get请求"
+        />
+
+
+    <Button
+        android:textSize="20sp"
+        android:id="@+id/btn_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:text="post请求"
+        />
+
+
+    <Button
+        android:textSize="20sp"
+        android:id="@+id/btn_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:text="json数据上传"
+        />
+
+    <Button
+        android:textSize="20sp"
+        android:id="@+id/btn_img_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:text="图片上传"
+        />
+
+    <Button
+        android:textSize="20sp"
+        android:id="@+id/btn_file_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:text="文件上传"
+        />
+
+</LinearLayout>

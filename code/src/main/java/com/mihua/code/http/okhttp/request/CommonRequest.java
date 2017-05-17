@@ -17,7 +17,7 @@ import okhttp3.RequestBody;
 public class CommonRequest {
 
 	/**
-	 * create the key-value Request
+	 * create the key-value HttpRequest
 	 * 
 	 * @param url
 	 * @param params

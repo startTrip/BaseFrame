@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".sharesdk.LoginActivity"
+    >
+
+    <Button
+        android:id="@+id/qq_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="QQ登录"
+        />
+    <Button
+        android:id="@+id/weixin_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="微信登录"
+        />
+    <Button
+        android:id="@+id/weibo_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="微博登录"
+        />
+
+    <Button
+        android:id="@+id/qq_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="QQ分享"
+        />
+
+    <Button
+        android:id="@+id/weixin_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="微信分享"
+        />
+
+    <Button
+        android:id="@+id/weibo_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="微博分享"
+        />
+
+    <Button
+        android:id="@+id/oneKey_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="官方一键分享"
+        />
+
+</LinearLayout>

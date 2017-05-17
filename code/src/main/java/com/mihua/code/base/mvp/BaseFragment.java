@@ -1,5 +1,8 @@
 package com.mihua.code.base.mvp;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -24,6 +27,14 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
 
     protected T mPresenter;
     private Unbinder mUnBinder;
+    private ProgressDialog mProgressDialog;
+    protected Activity mContext;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = (Activity) context;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,12 +47,15 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        mPresenter = getPresenter();
         if (mPresenter != null) {
             mPresenter.attach(this);
         }
         mUnBinder = ButterKnife.bind(this, view);
 
+        initEventAndData(savedInstanceState);
+
+        setListener();
     }
 
 
@@ -53,7 +67,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     protected abstract T getPresenter();
 
     // 初始化数据
-    protected abstract void initEventAndData();
+    protected abstract void initEventAndData(Bundle s);
 
     // 初始化监听器
     protected abstract void setListener();
@@ -63,11 +77,17 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     @Override
     public void showProgressDialog() {
 
+        mProgressDialog = new ProgressDialog(getActivity());
+        mProgressDialog.setMessage("正在加载.....");
+        mProgressDialog.show();
+
     }
 
     @Override
     public void hideProgressDialog() {
-
+        if(mProgressDialog.isShowing()){
+            mProgressDialog.dismiss();
+        }
     }
 
 

@@ -1,11 +1,40 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="CustomTheme">
+
+    </style>
+
+
+    <!-- 超市主界面 RadioButton 的样式-->
+
+    <style name="MainTabItem">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:textColor">@color/selector_main_tab_font</item>
+
+    </style>
+
+    <style name="CustomTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--  标题栏的颜色 -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--&lt;!&ndash; 状态栏的颜色 &ndash;&gt;-->
+        <!--<item name="colorPrimaryDark">@color/yellow</item>-->
+        <!-- button 等一些控件的颜色 -->
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!--&lt;!&ndash; 窗体的背景颜色 &ndash;&gt;-->
+        <!--<item name="android:windowBackground">@color/red</item>-->
+
     </style>
 
 </resources>

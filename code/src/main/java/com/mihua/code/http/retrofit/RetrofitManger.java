@@ -1,5 +1,7 @@
 package com.mihua.code.http.retrofit;
 
+import android.util.Log;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -31,8 +33,8 @@ public class RetrofitManger {
     private static RetrofitManger mInstance;
 
     private RetrofitManger(){
-        initOkhttp();
 
+        initOkhttp();
     }
 
     public static RetrofitManger getInstance(){
@@ -71,7 +73,7 @@ public class RetrofitManger {
                 public okhttp3.Response intercept(Chain chain) throws IOException {
 
                     Request request = chain.request();
-
+                    Log.d("request",request.toString());
 //                    HttpUrl.Builder authorizedUrlBuilder = request.url()
 //                            .newBuilder()
 //                            //添加统一参数 如手机唯一标识符,token等
@@ -82,6 +84,7 @@ public class RetrofitManger {
                             // TODO: 对所有请求添加请求头
 //                            .header("header1", "value").addHeader("type", "type1")
                             .method(request.method(), request.body())
+                            .addHeader("connection","keep_alive")
 //                            .url(authorizedUrlBuilder.build())
                             .build();
 
@@ -101,6 +104,7 @@ public class RetrofitManger {
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
+
         return retrofit.create(clz);
     }
 

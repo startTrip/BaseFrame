@@ -1,5 +1,7 @@
 package com.mihua.code.base.mvp;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -28,6 +30,15 @@ public abstract class BaseLazyFragment<T extends BasePresenter> extends Fragment
     private boolean isInitView = false;
     private boolean isFirstLoad = true;
 
+    protected Activity mContext;
+    private Bundle mBundle;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = (Activity) context;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -36,9 +47,13 @@ public abstract class BaseLazyFragment<T extends BasePresenter> extends Fragment
         return inflate;
     }
 
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        mBundle = savedInstanceState;
+
+        mPresenter = getPresenter();
 
         if (mPresenter != null) {
             mPresenter.attach(this);
@@ -46,7 +61,7 @@ public abstract class BaseLazyFragment<T extends BasePresenter> extends Fragment
         mUnBinder = ButterKnife.bind(this, view);
         // 已经初始化view
         isInitView = true;
-        lazyLoad();
+        lazyLoad(savedInstanceState);
     }
 
     @Override
@@ -54,20 +69,21 @@ public abstract class BaseLazyFragment<T extends BasePresenter> extends Fragment
         super.setUserVisibleHint(isVisibleToUser);
         if(isVisibleToUser){
             isVisible = true;
-            lazyLoad();
+            lazyLoad(mBundle);
         }else {
             // 设置已经不是可见的
             isVisible = false;
         }
     }
 
-    private void lazyLoad() {
+    private void lazyLoad(Bundle savedInstanceState) {
         if(!isVisible||!isFirstLoad||!isInitView){
+
             // 如果不是第一次加载、不是可见的、不是初始化View，则不加载数据
             return;
         }
         // 初始化数据
-        initEventAndData();
+        initEventAndData(savedInstanceState);
         // 初始化监听器
         setListener();
         // 设置不是第一次加载了
@@ -83,7 +99,7 @@ public abstract class BaseLazyFragment<T extends BasePresenter> extends Fragment
     protected abstract T getPresenter();
 
     // 初始化数据
-    protected abstract void initEventAndData();
+    protected abstract void initEventAndData(Bundle savedInstanceState);
 
     // 初始化监听器
     protected abstract void setListener();
