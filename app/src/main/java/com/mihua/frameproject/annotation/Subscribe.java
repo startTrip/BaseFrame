@@ -24,8 +24,11 @@ import java.lang.annotation.Target;
 
 public @interface Subscribe {
 
-    ThreadMode threadMode();
-    int priority();
-    boolean sticky();
-    String value();
+    ThreadMode threadMode() default ThreadMode.Main;
+
+    int priority() default 0;
+
+    boolean sticky() default false;
+
+    String value() default "subscribe";
 }

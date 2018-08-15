@@ -1,0 +1,21 @@
+
+ext{
+
+    android = [
+            compileSdkVersion: 25,
+            buildToolsVersion: "25.0.2",
+            minSdkVersion: 15,
+            targetSdkVersion: 25,
+            versionCode: 1,
+            versionName: "1.0"
+
+    ]
+
+    appId = [
+
+            "app":"com.mihua.frameproject"
+
+
+    ]
+
+}

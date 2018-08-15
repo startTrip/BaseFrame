@@ -34,8 +34,10 @@ public class QrPresenter extends RxPresenter<QrCodeContract.QrCodeView> implemen
 
     @Override
     public void CheckCamaraPermission(RxPermissions rxPermissions) {
+
         Subscription subscribe = rxPermissions.request(Manifest.permission.CAMERA)
                 .subscribe(new Action1<Boolean>() {
+
                     @Override
                     public void call(Boolean granted) {
                         if (granted) {

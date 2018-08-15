@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TimeLineView">
+
+        <attr name="Marker" format="reference"/>
+        <attr name="MarkerSize" format="dimension"/>
+        <attr name="LineSize" format="dimension"/>
+        <attr name="LineColor" format="color"/>
+    </declare-styleable>
+
+</resources>

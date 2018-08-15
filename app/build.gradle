@@ -1,17 +1,34 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 
+def  config = rootProject.ext.android
+def  appId = rootProject.ext.appId
+
+println "compileSdkVersion${config.compileSdkVersion}"
+println "buildToolsVersion${config.buildToolsVersion}"
+println "minSdkVersion${config.minSdkVersion}"
+println "versionCode${config.versionCode}"
+println "versionName${config.versionName}"
+
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.mihua.frameproject"
-        minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        applicationId appId["app"]
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+
+        ndk {
+            moduleName "hello"
+            ldLibs "log", "z", "m"
+            abiFilters "arm64-v8a", "armeabi-v7a", "x86"
+        }
+
     }
+
 
     buildTypes {
         release {
@@ -23,16 +40,10 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
     compile project(':code')
     compile project(':thirdplatform')
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:recyclerview-v7:25.3.1'
     // butterknife
-    compile 'com.jakewharton:butterknife:8.0.1'
-    apt 'com.jakewharton:butterknife-compiler:8.0.1'
     // design
-    compile 'com.android.support:design:25.3.1'
     // vlayout
     compile('com.alibaba.android:vlayout:1.0.3@aar') {
         transitive = true
@@ -41,5 +52,17 @@ dependencies {
     compile('com.alibaba.android:ultraviewpager:1.0.1@aar') {
         transitive = true
     }
+
+    // 饿了么购物车 依赖库
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.jakewharton:butterknife:8.0.1'
+    compile 'com.android.support:design:25.3.1'
     compile 'com.orhanobut:logger:1.15'
+    compile 'com.flipboard:bottomsheet-core:1.5.1'
+    compile 'se.emilsjolander:stickylistheaders:2.7.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    apt 'com.jakewharton:butterknife-compiler:8.0.1'
 }

@@ -3,12 +3,14 @@
           xmlns:android="http://schemas.android.com/apk/res/android"
     >
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:name=".MyApplication"
@@ -19,12 +21,16 @@
         android:theme="@style/AppTheme"
         >
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
+        <!-- <activity android:name=".example.TutorialOnFaceDetect"> -->
+        <!-- </activity> -->
+        <!-- <activity android:name=".example.TutorialOnFaceDetect1"> -->
+        <!-- </activity> -->
         <activity android:name=".vlayout.VLayoutActivity">
         </activity>
         <activity android:name=".request.RequestActivity">
@@ -37,21 +43,49 @@
         </activity>
         <activity android:name=".pay.PayActivity">
         </activity>
+        <activity android:name=".ui.elm.ShoppingCartActivity">
+        </activity>
 
         <!-- 支付宝 -->
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind" >
+            android:screenOrientation="behind"
+            >
         </activity>
         <activity
             android:name="com.alipay.sdk.auth.AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind" >
+            android:screenOrientation="behind"
+            >
+        </activity>
+        <activity android:name=".frame_code.event_bus.EventBusActivity">
+        </activity>
+        <activity android:name=".frame_code.event_bus.EventBusActivity2">
+        </activity>
+        <activity android:name=".dongnao.lsn3_paint.PaintActivity">
+        </activity>
+        <activity android:name=".dongnao.lsn4_paint_shader.ShaderActivity">
+        </activity>
+        <activity android:name=".bluetooth.BlueToothActivity">
+        </activity>
+        <activity android:name=".kotlin.LuncherActivity">
+
+
+
         </activity>
 
+        <activity android:name=".socket.socketbroadcast.SocketWifiBroadcastActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+            </activity>
 
     </application>
 

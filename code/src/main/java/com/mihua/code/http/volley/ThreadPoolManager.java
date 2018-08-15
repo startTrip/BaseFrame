@@ -23,7 +23,7 @@ public class ThreadPoolManager {
         mThreadPoolExecutor = new ThreadPoolExecutor(4, 10, 10, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(10), new RejectedExecutionHandler() {
             @Override
             public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
-
+                executor.execute(r);
             }
         });
         mThreadPoolExecutor.execute(mRunnable);

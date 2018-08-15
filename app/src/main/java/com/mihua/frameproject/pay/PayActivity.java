@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.alipay.sdk.app.PayTask;
 import com.mihua.frameproject.R;
-import com.mihua.frameproject.andfix.DxManager;
+import com.mihua.frameproject.frame_code.andfix.DxManager;
 import com.mihua.frameproject.pay.utils.AlipayHelper;
 import com.orhanobut.logger.Logger;
 
@@ -120,6 +120,7 @@ public class PayActivity extends AppCompatActivity {
                                 "该测试商品的详细描述", // 商品描述
                                 "0.01","1111");// 商品价格
 
+        Logger.d(orderInfo);
         /**
          * 特别注意，这里的签名逻辑需要放在服务端，切勿将私钥泄露在代码中！
          */
